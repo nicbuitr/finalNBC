@@ -41,6 +41,7 @@ export class App extends Component {
         <input type="text" onKeyPress={this.changeQuery.bind(this)} placeholder="Query"/>
         <h2>Map of Colombia</h2>
         <ColombiaMap
+          setProjection={this.setProjection.bind(this)}
           width="600"
           height="600"
           data={{RISARALDA:10, CALDAS:12}}
