@@ -6,9 +6,10 @@
 - Uses bootstrap features to improve the look & feel
 - Front End integrates correctly with Back End
 - Filtered responses to only retrieve the ones with coordinates
-- **Creativity Addons: **
--- **Added a counter to know how many dots have been plotted around the world since not all are plotted at Colombia**
--- **Added responsiveness as much as possible with help of bootstrap to improve UI friendliness to users of multiple viewport devices.**
+- ** Creativity Addons: **
+  - ** Added a counter to know how many dots have been plotted around the world since not all are plotted at Colombia**
+  - ** Added responsiveness as much as possible with help of bootstrap to improve UI friendliness to users of multiple viewport devices.**
+  - ** Attempted to achieve zoom of the plotted dots but still nothing, to make it work I have to store them in an array and redraw when zoom as Mike Bostock does at https://bl.ocks.org/mbostock/3680958.**
 - Extra Work: Implemented scalable and dynamic code to avoid redundant code in an effort to make the app as lightweight as possible and also to make it much more understandable and easy to interpret for both developers and browsers.
 - The app is deployed at: https://nicbuitr-twitterapp.herokuapp.com/
 
