@@ -6,6 +6,7 @@
 - Uses bootstrap features to improve the look & feel
 - Front End integrates correctly with Back End
 - Filtered responses to only retrieve the ones with coordinates
+- Clears up previous dots on new query to be consistent with query
 - **Creativity Addons:**
   - **Added a counter to know how many dots have been plotted around the world since not all are plotted at Colombia**
   - **Added responsiveness as much as possible with help of bootstrap to improve UI friendliness to users of multiple viewport devices.**
