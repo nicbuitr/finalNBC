@@ -14,6 +14,10 @@ export default class Overlay extends Component {
     };
   }
 
+  zoom(){
+  	
+  }
+
   componentWillUpdate() {
   	let canvas = this.canvas;
 	let ctx = canvas.getContext('2d');
