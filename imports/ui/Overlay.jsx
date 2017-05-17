@@ -15,6 +15,10 @@ export default class Overlay extends Component {
   }
 
   zoom(){
+
+  }
+
+  redraw(){
   	
   }
 
