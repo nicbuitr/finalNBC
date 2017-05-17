@@ -18,6 +18,10 @@ export class App extends Component {
             mapHeight: 600,
             mapWidth: 600,
             data: {RISARALDA:10, CALDAS:12},
+            zoom: false,
+            x: 0,
+            y: 0,
+            k: 0,
     };
   }
 
@@ -31,6 +35,17 @@ export class App extends Component {
 
   addToCount(){
     return this.state.totalNumberOfPlottedTweets++;
+  }
+
+  setZoom(x, y, k){
+    this.state.x = x;
+    this.state.y = y;
+    this.state.k = k;
+    this.state.zoom = !this.state.zoom;  
+  }
+
+  getZoom(){
+    return [this.state.zoom, this.state.x, this.state.y, this.state.k];
   }
 
   changeQuery(evt) {
@@ -68,12 +83,14 @@ export class App extends Component {
             tweets={this.props.tweets}
             getProjection={this.getProjection.bind(this)}
             addToCount={this.addToCount.bind(this)}
+            getZoom={this.getZoom.bind(this)}
             width={this.state.mapWidth}
             height={this.state.mapHeight}
             data={this.state.data}
           ></Overlay>
           <ColombiaMap
             setProjection={this.setProjection.bind(this)}
+            setZoom={this.setZoom.bind(this)}
             width={this.state.mapWidth}
             height={this.state.mapHeight}
             data={this.state.data}

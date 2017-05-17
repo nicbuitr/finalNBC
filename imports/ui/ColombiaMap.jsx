@@ -76,6 +76,7 @@ export default class ColombiaMap extends Component {
 		      .data(features)
 		    .enter().append('path')
 		      .attr('d', path)
+		      .attr('t', this)
 		      .attr('vector-effect', 'non-scaling-stroke')
 		      .style('fill', fillFn)
 		      .on('mouseover', mouseover)
@@ -122,12 +123,7 @@ export default class ColombiaMap extends Component {
 		    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')scale(' + k + ')translate(' + -x + ',' + -y + ')');
 		  
 		  // Nicbuitr: Attempt to zoom canvas
-		  let mouseCoords = d3.mouse(this.parentNode);
-		  let canvas = document.getElementById('overlayCanvas');
-		  let ctx = canvas.getContext('2d');
-		  ctx.translate(2*x , 2*y);
-		  ctx.scale(1, 1);
-		  ctx.translate(-x, -y);
+		  me.props.setZoom(x, y, k);
 		}
 
 
