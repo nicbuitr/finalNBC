@@ -11,6 +11,7 @@ export default class ColombiaMap extends Component {
 	getProjection() {
 		return this.projection;
 	}
+
 	componentDidMount() {
 		var width = this.props.width || 960,
 		    height = this.props.height || 500,
@@ -119,7 +120,16 @@ export default class ColombiaMap extends Component {
 		  g.transition()
 		    .duration(750)
 		    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')scale(' + k + ')translate(' + -x + ',' + -y + ')');
+		  
+		  // Nicbuitr: Attempt to zoom canvas
+		  let mouseCoords = d3.mouse(this.parentNode);
+		  let canvas = document.getElementById('overlayCanvas');
+		  let ctx = canvas.getContext('2d');
+		  ctx.translate(2*x , 2*y);
+		  ctx.scale(1, 1);
+		  ctx.translate(-x, -y);
 		}
+
 
 		function mouseover(d){
 		  // Highlight hovered province
@@ -255,11 +265,12 @@ export default class ColombiaMap extends Component {
 		      return 0.1 + Math.random()*0.4;
 		    });
 		}
+		this.props.setProjection(this.projection);
 	}
 
 	render() {
 		return (
-			<div className="colombiaMap">
+			<div className="colombiaMap" id="map">
 				<svg
 					ref={(svg) => {this.svg = svg; }}>
 				</svg>

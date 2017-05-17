@@ -10,6 +10,7 @@ export default class Tweet extends Component {
     	<span>{this.props.tweet.user.screen_name} </span>
     	<img src={this.props.tweet.user.profile_image_url} alt={this.props.tweet.user.screen_name + "profile image"}/>
       <span>{this.props.tweet.text} </span>
+      <span>Coordinates: {this.props.tweet.coordinates.coordinates[0] + ", " + this.props.tweet.coordinates.coordinates[1]} </span>
       {/*<span>{JSON.stringify(this.props.tweet)}</span>*/}
     </div>);
   }

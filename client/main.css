@@ -1,4 +1,9 @@
 /* CSS declarations go here */
+body {  
+  background: white url(background.jpg) fixed round;
+  font-family: Roboto !important;
+}
+
 .App {
   text-align: center;
 }
@@ -52,4 +57,20 @@ text.big-text{
 
 .effect-layer text, text.dummy-text{
   font-size: 12px;
+}
+
+.overlay-outter{
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+}
+
+.overlay-inner{
+  position: relative;
+  left: -50%;
+}
+
+.jumbotron {
+  border-radius: 1em;
+  border-style: groove;
 }
